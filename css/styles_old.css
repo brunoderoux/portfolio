@@ -16,10 +16,9 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
-/* En-tête */
 header {
     background-color: #2c3e50;
     color: white;
@@ -27,20 +26,23 @@ header {
     padding: 2rem 0;
 }
 
+/* Style pour l'en-tête avec photo de profil */
 .profile {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     gap: 1rem;
 }
 
 .profile-img {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #3498db;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Évite la déformation */
+    border: 3px solid #3498db; /* Bordure optionnelle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 
 .profile-text h1 {
@@ -53,7 +55,28 @@ header {
     opacity: 0.9;
 }
 
-/* Navigation */
+/* Responsive : réduire la taille de l'image sur mobile */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-text h1 {
+        font-size: 1.8rem;
+    }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
 nav {
     background-color: #34495e;
     position: sticky;
@@ -75,19 +98,76 @@ nav ul li a {
     font-weight: 600;
 }
 
-/* Contenu principal et colonne latérale */
+.section {
+    padding: 3rem 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.experience, .testimonial, .diplome {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills li {
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Style pour la mise en page à deux colonnes */
 .content-wrapper {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: flex-start;
 }
 
 .main-content {
     flex: 1;
-    min-width: 0;
+    min-width: 300px;
 }
 
 .sidebar {
@@ -98,7 +178,7 @@ nav ul li a {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: fit-content;
     position: sticky;
-    top: 100px; /* Ajustez selon la hauteur de votre en-tête + navigation */
+    top: 2rem;
     align-self: flex-start;
 }
 
@@ -131,54 +211,7 @@ nav ul li a {
     left: 0;
 }
 
-/* Sections du contenu principal */
-.section {
-    padding: 2rem 0;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #2c3e50;
-}
-
-.experience, .testimonial {
-    background: white;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.skills li {
-    background: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-}
-
-/* Pied de page */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-footer a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-/* Responsive */
+/* Responsive : empiler les colonnes sur mobile */
 @media (max-width: 992px) {
     .content-wrapper {
         flex-direction: column;
@@ -187,26 +220,13 @@ footer a {
     .sidebar {
         width: 100%;
         position: static;
-        margin-top: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
+        margin-top: 2rem;
     }
 }
 
-@media (max-width: 768px) {
-    .profile-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-text h1 {
-        font-size: 1.8rem;
-    }
+.sidebar-section li {
+    transition: transform 0.2s ease;
+}
+.sidebar-section li:hover {
+    transform: translateX(5px);
 }
