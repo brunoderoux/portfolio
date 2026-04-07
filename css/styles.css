@@ -26,6 +26,47 @@ header {
     padding: 2rem 0;
 }
 
+/* Style pour l'en-tête avec photo de profil */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Évite la déformation */
+    border: 3px solid #3498db; /* Bordure optionnelle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+.profile-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Responsive : réduire la taille de l'image sur mobile */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-text h1 {
+        font-size: 1.8rem;
+    }
+}
+
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -68,7 +109,7 @@ nav ul li a {
     color: #2c3e50;
 }
 
-.experience, .testimonial {
+.experience, .testimonial, .diplome {
     background: white;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -112,4 +153,80 @@ footer a {
     nav ul li {
         margin: 0.5rem 0;
     }
+}
+
+/* Style pour la mise en page à deux colonnes */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar-section ul {
+    list-style-type: none;
+}
+
+.sidebar-section li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.sidebar-section li:before {
+    content: "•";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive : empiler les colonnes sur mobile */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+.sidebar-section li {
+    transition: transform 0.2s ease;
+}
+.sidebar-section li:hover {
+    transform: translateX(5px);
 }
