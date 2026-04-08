@@ -151,6 +151,52 @@ nav ul li a {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Style pour les listes imbriquées */
+.experience ul ul {
+    margin-left: 2rem; /* Décalage vers la droite */
+    list-style-type: circle; /* Style de puce différent pour les sous-listes */
+}
+
+.experience li li {
+    margin-bottom: 0.3rem; /* Espacement réduit entre les éléments de sous-liste */
+}
+
+.experience ul ul li::marker {
+    color: #e74c3c; /* Rouge par exemple */
+}
+
+/* Remplace les puces par des icônes pour les listes principales */
+.experience ul li::before,
+.sidebar-section ul li::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f058"; /* Icône "caret-right" (flèche vers la droite) */
+    color: #3498db; /* Couleur de l'icône */
+    margin-right: 0.5rem;
+    position: absolute;
+    left: 0;
+}
+
+/* Remplace les puces des sous-listes par une autre icône */
+.experience ul ul li::before {
+    content: "\f0da"; /* Icône "chevron-right" (petite flèche) */
+    font-size: 0.7em;
+}
+
+/* Ajuste l'alignement des listes avec icônes */
+.experience ul,
+.sidebar-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.experience ul li,
+.sidebar-section ul li {
+    position: relative;
+    padding-left: 1.5rem; /* Espace pour l'icône */
+    margin-bottom: 0.5rem;
+}
+
 .skills {
     display: flex;
     flex-wrap: wrap;
