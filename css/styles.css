@@ -75,6 +75,35 @@ nav ul li a {
     font-weight: 600;
 }
 
+/* Section d'introduction */
+.intro-section {
+    background-color: #f0f4f8; /* Fond clair pour contraster avec le menu */
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Séparation visuelle */
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.intro-text strong {
+    color: #2c3e50; /* Couleur plus foncée pour le nom */
+    font-weight: 700;
+}
+
+/* Responsive : ajustement pour mobile */
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: 1rem;
+    }
+}
+
 /* Contenu principal et colonne latérale */
 .content-wrapper {
     display: flex;
