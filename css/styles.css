@@ -79,16 +79,27 @@ nav ul li a {
 .intro-section {
     background-color: #f0f4f8; /* Fond clair pour contraster avec le menu */
     padding: 2rem 0;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #e0e0e0; /* Séparation visuelle */
+    width: 100%;
+    padding: 2rem 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.intro-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: left; /* Alignement à gauche pour tout le contenu */
 }
 
 .intro-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #444;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px; /* Largeur max pour le texte*/
+    margin: 0 auto 1rem;/*Marge en bas pour espacer les paragraphes*/
     padding: 0 1rem;
 }
 
@@ -103,6 +114,28 @@ nav ul li a {
         font-size: 1rem;
     }
 }
+
+/* Style pour la liste à puces dans l'intro */
+.intro-list {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding-left: 1rem; /* Retrait léger à gauche pour aligner avec le texte */
+    margin: 1rem 0 1.5rem 0; /* Espacement vertical */
+    text-align: left;
+}
+
+.intro-list li {
+    position: relative;
+    padding-left: 1.5rem; /* Espace pour l'icône ou la puce personnalisée */
+    margin-bottom: 0.5rem;
+}
+
+.intro-list li::before {
+    content: "•"; /* Puce personnalisée */
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
 .intro-button {
     display: inline-block;
     background-color: #3498db;
