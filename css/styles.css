@@ -118,9 +118,10 @@ nav ul li a {
 /* Style pour la liste à puces dans l'intro */
 .intro-list {
     list-style-type: none; /* Supprime les puces par défaut */
-    padding-left: 1rem; /* Retrait léger à gauche pour aligner avec le texte */
-    margin: 1rem 0 1.5rem 0; /* Espacement vertical */
+    padding-left: 1rem; /*Retrait léger à gauche pour aligner avec le texte */
+    margin: 1rem 0 1.5rem 13rem; /* Espacement vertical */
     text-align: left;
+    max-width: 800px;
 }
 
 .intro-list li {
@@ -144,6 +145,7 @@ nav ul li a {
     border-radius: 5px;
     text-decoration: none;
     margin-top: 1rem;
+    margin-left: 13rem;
     font-weight: 600;
     transition: background-color 0.3s;
 }
